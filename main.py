@@ -10,8 +10,12 @@ from selenium import webdriver
 prefix = "~"
 client = discord.Client()
 
-options = webdriver.ChromeOptions()
-options.add_argument("--headless")
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument("--no-sandbox")
+
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 
 @client.event
 async def on_ready():
@@ -36,8 +40,7 @@ async def on_message(message):
             Text = Text + " " + learn[i]
         encText = Text
 
-        chromedriver_dir = r'https://github.com/K-SEKYUN/Vocaro-Wikidot/blob/main/chromedriver.exe'
-        driver = webdriver.Chrome(chromedriver_dir, options=options)
+        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
         driver.get('https://cse.google.com/cse?cx=010798177249342776914:8madl3htvdg&q=' + encText)
         source = driver.page_source
         bs = bs4.BeautifulSoup(source, 'lxml')
