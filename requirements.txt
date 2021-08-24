@@ -1,4 +1,4 @@
-git+BeautifulSoup4
-git+selenium
-git+lxml
-git+discord.py
+BeautifulSoup4
+selenium
+lxml
+discord.py
