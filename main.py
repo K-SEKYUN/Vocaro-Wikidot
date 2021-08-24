@@ -7,7 +7,7 @@ from selenium import webdriver
 
 #Link = https://discord.com/api/oauth2/authorize?client_id=879574683945676820&permissions=2048&scope=bot
 
-prefix = "~"
+prefix = "!"
 client = discord.Client()
 
 chrome_options = webdriver.ChromeOptions()
@@ -26,7 +26,7 @@ async def on_ready():
     print(client.user.id)
     print("System login!")
     print("==============")
-    await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name="가사검색 봇 입니다!!"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.listening, name="!도움말 또는 !help로 불러주세요!!"))
 
 @client.event
 async def on_message(message):
@@ -35,13 +35,14 @@ async def on_message(message):
         
     if message.content == f"{prefix}도움말" or message.content == f"{prefix}help":
         help = discord.Embed(title='도움말', description='도움이 필요할때 ```^도움말 or ^help``` 라고 해주세요!!', color = 0x39c5bb)
-        help.add_field(name='```^검색```', value='보카로 가사 검색을 할수 있습니다', inline=True)
+        help.add_field(name='```!검색```', value='보카로 가사 검색을 할수 있습니다', inline=False)
+        help.add_field(name='```!search```', value='search the lyrics with a vocaro', inline=False)
         help.set_footer(text='Made By Luen')
         help.set_thumbnail(url="https://media.discordapp.net/attachments/828467375337766962/828581378827485275/1.jpg?width=465&height=491")
         await message.channel.send(embed=help)
 
 #Search Commands(보카로 가사위키)
-    if message.content.startswith(f'{prefix}검색'):
+    if message.content.startswith(f'{prefix}검색') or message.content.startswith(f'{prefix}search') or message.content.startswith(f'{prefix}Search') or message.content.startswith(f'{prefix}SEARCH'):
         learn = message.content.split(" ")
         Text = ""
         vrsize = len(learn)
