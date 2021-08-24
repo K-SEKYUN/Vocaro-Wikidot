@@ -11,7 +11,7 @@ prefix = "~"
 client = discord.Client()
 
 options = webdriver.ChromeOptions()
-options.add_argument("headless")
+options.add_argument("--headless")
 
 @client.event
 async def on_ready():
