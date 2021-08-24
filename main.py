@@ -61,9 +61,7 @@ async def on_message(message):
         for i in range(0, 1):
             entireNum = entire[i]
             entireText = entireNum.text.strip()
-            print(entireText)
             hyperlink = entireNum.get('href')
-            print(hyperlink)
             rink = '' + hyperlink
             embed.add_field(name="가사 검색 결과", value=entireText + '\n링크 : ' + rink)
             embed.set_footer(text="보카로 가사위키 : http://vocaro.wikidot.com/")
