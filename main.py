@@ -17,6 +17,9 @@ chrome_options.add_argument('--no-sandbox')
 
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 
+GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+
 @client.event
 async def on_ready():
     print(client.user.name)
