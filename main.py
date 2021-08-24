@@ -36,7 +36,7 @@ async def on_message(message):
             Text = Text + " " + learn[i]
         encText = Text
 
-        chromedriver_dir = r'chromedriver'
+        chromedriver_dir = os.path.join('chromedriver')
         driver = webdriver.Chrome(chromedriver_dir, options=options)
         driver.get('https://cse.google.com/cse?cx=010798177249342776914:8madl3htvdg&q=' + encText)
         source = driver.page_source
