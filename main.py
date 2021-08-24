@@ -7,7 +7,7 @@ from selenium import webdriver
 
 #Link = https://discord.com/api/oauth2/authorize?client_id=879574683945676820&permissions=2048&scope=bot
 
-prefix = "^"
+prefix = "~"
 client = discord.Client()
 
 options = webdriver.ChromeOptions()
