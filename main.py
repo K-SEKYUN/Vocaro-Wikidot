@@ -19,7 +19,7 @@ async def on_ready():
     print(client.user.id)
     print("System login!")
     print("==============")
-    await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name="^도움말 or ^help로 불러줘!!"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name="가사검색 봇 입니다!!"))
 
 @client.event
 async def on_message(message):
