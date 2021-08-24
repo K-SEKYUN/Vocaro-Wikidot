@@ -1,3 +1,4 @@
 git+https://github.com/wention/BeautifulSoup4
 git+https://github.com/SeleniumHQ/selenium
 git+https://github.com/lxml/lxml
+git+https://github.com/Rapptz/discord.py
