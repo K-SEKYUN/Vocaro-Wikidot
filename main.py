@@ -2,8 +2,8 @@
 
 import bs4
 import discord
+import os
 from selenium import webdriver
-from token_a import *
 
 #Link = https://discord.com/api/oauth2/authorize?client_id=879574683945676820&permissions=2048&scope=bot
 
@@ -60,4 +60,4 @@ async def on_message(message):
 
         driver.quit()
 
-client.run(token)
+client.run(os.environ['token'])
