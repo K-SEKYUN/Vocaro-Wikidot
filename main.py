@@ -34,7 +34,7 @@ async def on_message(message):
             return None
         
     if message.content == f"{prefix}도움말" or message.content == f"{prefix}help":
-        help = discord.Embed(title='도움말', description='도움이 필요할때 ```^도움말 or ^help``` 라고 해주세요!!', color = 0x39c5bb)
+        help = discord.Embed(title='도움말', description='도움이 필요할때 ```!도움말 or !help``` 라고 해주세요!!', color = 0x39c5bb)
         help.add_field(name='```!검색```', value='보카로 가사 검색을 할수 있습니다', inline=False)
         help.add_field(name='```!search```', value='search the lyrics with a vocaro', inline=False)
         help.set_footer(text='Made By Luen')
