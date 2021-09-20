@@ -38,13 +38,13 @@ async def on_message(message):
         help.add_field(name='```!검색```', value='보카로 가사 검색을 할수 있습니다', inline=False)
         help.add_field(name='```!search```', value='search the lyrics with a vocaro', inline=False)
         help.set_footer(text='Made By Luen')
-        help.set_thumbnail(url="https://media.discordapp.net/attachments/828467375337766962/828581378827485275/1.jpg?width=465&height=491")
+        help.set_thumbnail(url="https://media.discordapp.net/attachments/828584254384111618/828669784748982312/Vocaloid_Lyrics_icon.png")
         await message.channel.send(embed=help)
 
 #Search Commands(보카로 가사위키)
     if message.content.startswith(f'{prefix}검색') or message.content.startswith(f'{prefix}search') or message.content.startswith(f'{prefix}Search') or message.content.startswith(f'{prefix}SEARCH'):
         learn = message.content.split(" ")
-        Text = ""
+        Text = " "
         vrsize = len(learn)
         vrsize = int(vrsize)
         for i in range(1, vrsize):
