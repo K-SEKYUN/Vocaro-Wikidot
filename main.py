@@ -24,7 +24,7 @@ CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
 async def on_ready():
     print(client.user.name)
     print(client.user.id)
-    print("System login!")
+    print("System Login!")
     print("==============")
     await client.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.listening, name="!도움말 또는 !help로 불러주세요!!"))
 
@@ -48,7 +48,7 @@ async def on_message(message):
         vrsize = len(learn)
         vrsize = int(vrsize)
         for i in range(1, vrsize):
-            Text = Text + " " + learn[i]
+            Text = Text + "" + learn[i]
         encText = Text
 
         driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
