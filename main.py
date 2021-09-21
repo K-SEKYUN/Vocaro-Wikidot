@@ -64,7 +64,7 @@ async def on_message(message):
             entireText = entireNum.text.strip()
             hyperlink = entireNum.get('href')
             rink = '' + hyperlink
-            embed.add_field(name="검색 결과", value=entireText + '\n링크 : ' + rink)
+            embed.add_field(name="검색 결과", value=entireText + '\nLink : ' + rink)
             embed.set_footer(text="보카로 가사위키 : http://vocaro.wikidot.com/")
             embed.set_thumbnail(url='https://media.discordapp.net/attachments/828584254384111618/828669784748982312/Vocaloid_Lyrics_icon.png')
 
