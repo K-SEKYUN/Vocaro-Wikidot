@@ -67,10 +67,9 @@ async def on_message(message):
             hyperlink = entireNum.get('href')
             imagelink = imageNum.het('src')
             rink = '' + hyperlink
-            imageSumlink = '' + imagelink
             embed.add_field(name="검색 결과", value=entireText + '\nLink : ' + rink)
             embed.set_footer(text="보카로 가사위키 : http://vocaro.wikidot.com/")
-            embed.set_thumbnail(url=imageSumlink)
+            embed.set_thumbnail(url=imagelink)
 
         await message.channel.send(embed=embed)
 
