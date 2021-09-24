@@ -59,7 +59,6 @@ async def on_message(message):
         image = bs.find_all('img', {'class' : 'gs-image'})
 
         embed = discord.Embed(title="보카로 가사검색", color = 0x39c5bb)
-
         for i in range(0, 1):
             entireNum = entire[i]
             imageNum = image[i]
