@@ -64,7 +64,6 @@ async def on_message(message):
             entireNum = entire[i]
             imageNum = image[i]
             entireText = entireNum.text.strip()
-            imageSum = imageNum.image.strip()
             hyperlink = entireNum.get('href')
             imagelink = imageNum.het('src')
             rink = '' + hyperlink
