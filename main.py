@@ -65,7 +65,7 @@ async def on_message(message):
             imageNum = image[i]
             entireText = entireNum.text.strip()
             hyperlink = entireNum.get('href')
-            imagelink = imageNum.het('src')
+            imagelink = imageNum.get('src')
             rink = '' + hyperlink
             embed.add_field(name="검색 결과", value=entireText + '\nLink : ' + rink)
             embed.set_footer(text="보카로 가사위키 : http://vocaro.wikidot.com/")
