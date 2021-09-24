@@ -56,17 +56,22 @@ async def on_message(message):
         source = driver.page_source
         bs = bs4.BeautifulSoup(source, 'lxml')
         entire = bs.find_all('a', {'class': 'gs-title'})
+        image = bs.find_all('img', {'class' : 'gs-image'})
 
         embed = discord.Embed(title="보카로 가사검색", color = 0x39c5bb)
 
         for i in range(0, 1):
             entireNum = entire[i]
+            imageNum = image[i]
             entireText = entireNum.text.strip()
+            imageSum = imageNum.image.strip()
             hyperlink = entireNum.get('href')
+            imagelink = imageNum.het('src')
             rink = '' + hyperlink
+            imageSumlink = '' + imagelink
             embed.add_field(name="검색 결과", value=entireText + '\nLink : ' + rink)
             embed.set_footer(text="보카로 가사위키 : http://vocaro.wikidot.com/")
-            embed.set_thumbnail(url='https://media.discordapp.net/attachments/828584254384111618/828669784748982312/Vocaloid_Lyrics_icon.png')
+            embed.set_thumbnail(url=imageSumlink)
 
         await message.channel.send(embed=embed)
 
