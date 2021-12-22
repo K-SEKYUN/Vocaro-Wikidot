@@ -58,7 +58,7 @@ async def on_message(message):
         entire = bs.find_all('a', {'class': 'gs-title'})
         image = bs.find_all('img', {'class' : 'gs-image'})
 
-        embed = discord.Embed(title="보카로 가사검색", color = 0x39c5bb)
+        embed = discord.Embed(title="보카로 가사 검색", color = 0x39c5bb)
         for i in range(0, 1):
             entireNum = entire[i]
             imageNum = image[i]
@@ -67,7 +67,7 @@ async def on_message(message):
             imagelink = imageNum.get('src')
             rink = '' + hyperlink
             embed.add_field(name="검색 결과", value=entireText + '\nLink : ' + rink)
-            embed.set_footer(text="보카로 가사위키 : http://vocaro.wikidot.com/")
+            embed.set_footer(text="보카로 가사 위키 : http://vocaro.wikidot.com/")
             embed.set_thumbnail(url=imagelink)
 
         await message.channel.send(embed=embed)
